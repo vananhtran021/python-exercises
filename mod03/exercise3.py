@@ -1,4 +1,4 @@
-'''#1
+#1
 name=input("Please enter your name: ")
 print("Hello, " + name + "!")
 #2
@@ -22,7 +22,7 @@ print("The sum of the three numbers is: " + str(sum))
 product=num1*num2*num3
 print("The product of the three numbers is: " + str(product))
 avg=(num1+num2+num3)/3
-print("The average of the three numbers is: " + str(avg))  '''
+print("The average of the three numbers is: " + str(avg))
 
 #5
 talents = float(input("Please enter talents:\n"))
@@ -38,6 +38,24 @@ grams = total_grams % 1000
 
 print("\nThe weight in modern units:")
 print(f"{kilograms} kilograms and {grams:.2f} grams.")
+
+#11
+import random
+
+# 3-digit code: each number is between 0 and 9
+code_3 = ""
+
+for i in range(3):
+    code_3 += str(random.randint(0, 9))
+
+# 4-digit code: each number is between 1 and 6
+code_4 = ""
+
+for i in range(4):
+    code_4 += str(random.randint(1, 6))
+
+print("3-digit code:", code_3)
+print("4-digit code:", code_4)
 
 
 
