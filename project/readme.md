@@ -1,4 +1,4 @@
-# Guess the number
+# Guess the Number
 
 # Anh Tran Thi Van
 
