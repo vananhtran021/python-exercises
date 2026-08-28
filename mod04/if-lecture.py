@@ -1,4 +1,4 @@
-'''dog1="A"
+dog1="A"
 dog2="B"
 if dog1==dog2:
     print("The dogs are the same")
@@ -37,7 +37,7 @@ elif grade>=60:
 elif grade>=50:
     print("You got a C.")
 else:
-    print("You failed .")'''
+    print("You failed .")
 
 status=input("Do you have a citizenship? (yes/no): ")
 age=int(input("Enter your age: " ))
