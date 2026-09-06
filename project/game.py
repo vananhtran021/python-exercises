@@ -8,7 +8,7 @@ else:
     print(f"Welcome, {name}!")
 
     while True:
-        print("\n--- Main Menu ---")
+        print("\nMain Menu ")
         print("tervehdys - Say hello")
         print("taistelu - Fight a monster")
         print("aarre - Find a treasure")
