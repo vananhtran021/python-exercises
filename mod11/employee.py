@@ -7,11 +7,13 @@ class Employee:
         self.last_name = last_name
     def print_information(self):
         print(f"{self.employee_number}: {self.first_name} {self.last_name}")
-employees = []
+'''employees = []
 employees.append(Employee("Viivi", "Virta"))
 employees.append(Employee("Ahmed", "Habib"))
 employees.append(Employee("Anh", "Tran"))
 for e in employees:
-    e.print_information()
+    e.print_information()'''
+
+
 
 
