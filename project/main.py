@@ -1,8 +1,42 @@
 import random
+import os
 
 from game.item import Item
 from game.room import Room
 from game.player import Player
+
+
+def read_file(filename):
+    file_path = os.path.join(os.path.dirname(__file__), filename)
+
+    with open(file_path, "r") as file:
+        return file.read()
+
+
+def save_game(player):
+    file_path = os.path.join(os.path.dirname(__file__), "savegame.txt")
+
+    with open(file_path, "w") as file:
+        file.write(player.name + "\n")
+        file.write(player.location.name + "\n")
+
+    print("Game saved successfully!")
+
+
+def load_game():
+    file_path = os.path.join(os.path.dirname(__file__), "savegame.txt")
+
+    try:
+        with open(file_path, "r") as file:
+            name = file.readline().strip()
+            room_name = file.readline().strip()
+
+        print("Saved game found!")
+        return name, room_name
+
+    except FileNotFoundError:
+        print("No saved game found.")
+        return None
 
 
 def guess_number(number):
@@ -17,33 +51,30 @@ def guess_number(number):
 
 
 def get_hint(number):
-    print("Hint: The number is between 1 and 10.")
+    print(f"Hint: the number is between 1 and 10.")
 
 
 def new_game():
-    print("A new number has been chosen!")
-    return random.randint(1, 10)
+    number = random.randint(1, 10)
+    print("A new number has been generated!")
+    return number
 
 
 def show_inventory(player):
-    print("\nInventory")
-
-    if len(player.items) == 0:
-        print("Your inventory is empty.")
+    if player.inventory:
+        print("\nYour inventory:")
+        for item in player.inventory:
+            print(f"- {item.name}")
     else:
-        for item in player.items:
-            print("-", item)
+        print("\nYour inventory is empty.")
 
 
 def main():
-    name = input("What is your name? ")
-    age = int(input("How old are you? "))
-
-    if age < 12:
-        print("You are a minor. The game is shutting down.")
-        return
-
-    print(f"Welcome, {name}!")
+    # Read introduction and instructions from text files
+    print(read_file("intro.txt"))
+    print()
+    print(read_file("instructions.txt"))
+    print()
 
     # Create items
     key = Item("Key", 0.2)
@@ -55,8 +86,48 @@ def main():
     kitchen = Room("Kitchen", book)
     garden = Room("Garden", coin)
 
+    # Choose new game or continue
+    choice = input(
+        "Do you want to start a (N)ew game or (C)ontinue? "
+    ).lower()
+
+    if choice == "c":
+        saved_game = load_game()
+
+        if saved_game:
+            name, room_name = saved_game
+            age = int(input("How old are you? "))
+
+            # Restore player's location
+            if room_name == "Bedroom":
+                starting_room = bedroom
+            elif room_name == "Kitchen":
+                starting_room = kitchen
+            elif room_name == "Garden":
+                starting_room = garden
+            else:
+                starting_room = bedroom
+
+        else:
+            print("Starting a new game...")
+            name = input("What is your name? ")
+            age = int(input("How old are you? "))
+            starting_room = bedroom
+
+    else:
+        name = input("What is your name? ")
+        age = int(input("How old are you? "))
+        starting_room = bedroom
+
+    # Check age
+    if age < 12:
+        print("You are a minor. The game is shutting down.")
+        return
+
+    print(f"Welcome, {name}!")
+
     # Create player
-    player = Player(name, bedroom)
+    player = Player(name, starting_room)
 
     # Create random number
     number = random.randint(1, 10)
@@ -70,9 +141,10 @@ def main():
         print("lisaa - Collect item")
         print("reppu - Show inventory")
         print("huone - Show current room")
+        print("tallenna - Save the game")
         print("lopeta - Quit the game")
 
-        command = input("Enter command: ")
+        command = input("Enter command: ").lower()
 
         if command == "arvaa":
             guess_number(number)
@@ -114,6 +186,9 @@ def main():
             else:
                 print("There is no item here.")
 
+        elif command == "tallenna":
+            save_game(player)
+
         elif command == "lopeta":
             print("Game over. Goodbye!")
             break
@@ -122,4 +197,5 @@ def main():
             print("Unknown command.")
 
 
-main()
+if __name__ == "__main__":
+    main()
