@@ -1,8 +1,134 @@
-Instructions:
+========================================
+             HOW TO PLAY
+========================================
 
-1. Enter your name and age.
-2. Explore the room.
-3. Find useful items.
-4. Guess the correct number.
-5. Find the key.
-6. Escape from the room.
+OBJECTIVE
+----------------------------------------
+
+Your objective is to escape the house.
+
+You start in the Bedroom.
+
+There are three different escape routes.
+
+1. KEY ROUTE
+----------------------------------------
+
+Find the Key.
+
+Go to the Main Door.
+
+Use the Key to unlock the door.
+
+If you have the Key, you can escape.
+
+KEY -> MAIN DOOR -> END
+
+
+2. BOOK ROUTE
+----------------------------------------
+
+Find the Book.
+
+Go to the Puzzle Room.
+
+The Book contains information that helps
+you solve the puzzle.
+
+If you have the Book, you can escape.
+
+BOOK -> PUZZLE -> END
+
+
+3. COIN ROUTE
+----------------------------------------
+
+Find the Coin.
+
+Go to the Secret Passage.
+
+Use the Coin to activate the hidden exit.
+
+If you have the Coin, you can escape.
+
+COIN -> SECRET PASSAGE -> END
+
+
+MAIN MENU
+----------------------------------------
+
+1. Show current room
+   Shows your current location and
+   available exits.
+
+2. Move
+   Move to another connected location.
+
+3. Collect item
+   Collect the item in your current room.
+
+4. Show inventory
+   Shows all items you have collected
+   and their quantities.
+
+5. Show player status
+   Shows your name, age, location,
+   score and total items.
+
+6. Show all rooms
+   Shows the locations in the game.
+
+7. Play number guessing game
+   Guess a number from 1 to 10.
+   You can use a hint.
+   A correct answer gives extra points.
+
+8. Try to escape
+   Checks whether you have the correct
+   item for your current escape route.
+
+9. Save game
+   Saves your player information to
+   savegame.txt.
+
+10. Show instructions
+    Displays these game instructions.
+
+11. Quit
+    Exit the game.
+
+
+SCORING
+----------------------------------------
+
+Collecting an item:
++5 points
+
+Winning the number guessing game:
++10 points
+
+
+AGE RATING
+----------------------------------------
+
+This game is rated 12+.
+
+Players under 12 cannot start the game.
+
+
+IMPORTANT
+----------------------------------------
+
+There is more than one way to escape.
+
+You can complete the game using:
+
+Key -> Main Door -> END
+
+Book -> Puzzle -> END
+
+Coin -> Secret Passage -> END
+
+
+Explore carefully and choose your route!
+========================================

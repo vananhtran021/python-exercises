@@ -1,5 +1,49 @@
-Welcome to the Mystery Room!
+========================================
+             MYSTERY ROOM
+          ESCAPE THE HOUSE
+========================================
 
-You are trapped inside a mysterious room.
-Find the key and escape!
+You wake up in a strange house.
+
+You do not remember how you got there.
+
+You are trapped inside.
+
+You start in the Bedroom.
+
+From there, you discover three possible
+ways to escape:
+
+        KEY
+         |
+    MAIN DOOR
+         |
+        END
+
+        BOOK
+         |
+      PUZZLE
+         |
+        END
+
+        COIN
+         |
+ SECRET PASSAGE
+         |
+        END
+
+Each route requires a different item.
+
+Explore the house carefully.
+Find an item.
+Choose your route.
+Use the correct item to escape.
+
+You can also play a number guessing game
+to earn extra points.
+
+Your objective:
+
+ESCAPE THE HOUSE.
+
 Good luck!

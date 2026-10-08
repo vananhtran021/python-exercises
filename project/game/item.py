@@ -1,9 +1,8 @@
 class Item:
-    def __init__(self, name: str, weight: float):
+    """Represents an item in the Mystery Room game."""
+
+    def __init__(self, name):
         self.name = name
-        self.weight = weight
 
     def __str__(self):
-        return f"{self.name} ({self.weight} kg)"
-key = Item("Key", 0.2)
-book = Item("Book", 1.0)
+        return self.name
